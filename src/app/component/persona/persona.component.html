@@ -1,0 +1,51 @@
+<div class="container">
+    
+    <div class="container mat-elevation-z8">
+        <a [routerLink]="['/persona/agregar']">
+            <button class="btn btn-success mt-3 mb-3">Agregar</button>
+        </a>
+        
+        <h5>Ejemplo Paginación</h5>
+        <p-table [value]="arregloPersonas" [paginator]="true" [rows]="3" [showCurrentPageReport]="true" [tableStyle]="{'min-width': '50rem'}"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[3,6,9]">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido Paterno</th>
+                    <th>Apellido Materno</th>
+                    <th>Edad</th>
+                    <th>Acciones</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-persona>
+                <tr>
+                    <td>{{persona.id}}</td>
+                    <td>{{persona.nombre + "(usando | uppercase)" | uppercase}}</td>
+                    <td>{{persona.apellidoPaterno}}</td>
+                    <td>{{persona.apellidoMaterno}}</td>
+                    <td>{{persona.edad}}</td>
+                    <td>
+                        <!--<button class="btn btn-warning" (click)="navegarAModificar(persona.id)">Modificar</button>-->
+                        <button type="button" (click)="show(persona.id)" class="btn btn-warning">Modificar</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" (click)="navegarAEliminar(persona.id)">Eliminar</button>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="paginatorleft">
+                <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+            </ng-template>
+            <ng-template pTemplate="paginatorright">
+                <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+            </ng-template>
+        </p-table>
+
+    </div>
+
+    <div class="mt-4">
+        <a [routerLink]="['']" [queryParams]="{ tab: 'persona' }" class="btn btn-secondary">Regresar al menú</a>
+    </div>
+
+</div>

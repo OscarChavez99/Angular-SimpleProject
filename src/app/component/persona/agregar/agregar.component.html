@@ -1,0 +1,35 @@
+<h2>Agregar</h2>
+
+<form [formGroup]="agregarForm" (ngSubmit)="agregarPersona()">
+    <!--ID-->
+    <div class="form-group">
+        <label for="id">ID:</label>
+        <input type="text" id="id" formControlName="id" class="form-control" required>
+    </div>
+    <!--Nombre-->
+    <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" formControlName="nombre" class="form-control" required>
+    </div>
+    <!--ApellidoPaterno-->
+    <div class="form-group">
+        <label for="apellidoPaterno">Apellido Paterno:</label>
+        <input type="text" id="apellidoPaterno" formControlName="apellidoPaterno" class="form-control" required>
+    </div>
+    <!--ApellidoMaterno-->
+    <div class="form-group">
+        <label for="apellidoMaterno">Apellido Materno:</label>
+        <input type="text" id="apellidoMaterno" formControlName="apellidoMaterno" class="form-control" required>
+    </div>
+    <!--Edad-->
+    <div class="form-group">
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" formControlName="edad" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Agregar Persona</button>
+  </form>
+  
+
+<div class="mt-5">
+    <button routerLink="/ejemplo/persona">Regresar a Persona</button>
+</div>

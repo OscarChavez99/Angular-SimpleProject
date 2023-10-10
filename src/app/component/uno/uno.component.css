@@ -1,0 +1,17 @@
+.buttons-container{
+    margin-top: 2rem;
+}
+
+.buttons-container button {
+    margin-right: 2rem;
+}
+/* */
+.inputs-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs-container input {
+    width: 50%;
+    margin-bottom: 1rem;
+}

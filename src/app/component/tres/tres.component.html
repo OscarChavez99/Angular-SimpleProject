@@ -1,0 +1,28 @@
+<h1>This is an example of a simple table, where you can iterate through the elements with a 
+    'For' loop and perform actions</h1>
+
+<table>
+    <tr>
+        <th>Indice</th>
+        <th>Valor</th>
+    </tr>
+
+    <tr *ngFor="let numero of numeros; index as i; trackBy: trackByFn ">
+        <td>
+            {{i}}
+        </td>
+        <td id="tdValor">
+            {{numero}}
+        </td>
+        <td>
+            <button id="btnMensaje" class="btn btn-primary" (click)="btnMensaje_Click(numero, i);">Mensaje</button>
+            <button id="btnModificar" class="btn btn-warning" (click)="btnModificar_Click(i);">Modificar</button>
+            <input type="text" id="txt_Update" [(ngModel)]="numeros[i]" *ngIf="mostrar[i]" />
+            <button id="btnBorrar" class="btn btn-danger" (click)="btnEliminar_Click(i);" >Eliminar</button>
+        </td>
+    </tr>
+</table>
+
+<div class="mt-3">
+    <a [routerLink]="['']" [queryParams]="{ tab: 'tres' }" class="btn btn-secondary">Regresar a menú</a>
+</div>

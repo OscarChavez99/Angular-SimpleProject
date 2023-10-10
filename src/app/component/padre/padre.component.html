@@ -1,0 +1,44 @@
+<div class="container">
+    <h1>Componente Padre</h1>
+
+    <!--Usuario-->
+    <div class="row">
+        <div class="col-2">
+            <label class="label">Usuario</label>
+            <input type="text" class="form-control" [(ngModel)]="valor">
+            <button *ngIf="valor" (click)="valor=''">
+                Close
+            </button>
+        </div>
+        <div class="col-2"> <button class="btn btn-primary" (click)="btnMostrar_Click();">Enviar dato</button> </div>
+        <div class="col-2"> <button class="btn btn-primary" (click)="btnActualizar_Click();">Actualizar datos</button> </div>
+    </div>
+    <!--Contraseña-->
+    <div class="row">
+        <div class="col-2">
+            <label class="label">Contraseña</label>
+            <input type="password" class="form-control" [(ngModel)]="contrasenia">
+            <button *ngIf="contrasenia" (click)="contrasenia=''">
+                Close
+            </button>
+        </div>
+    </div>
+    <!--Petición GET-->
+    <div class="row">
+        <div class="col-2">
+            <label class="label">Enviar </label>
+            <input type="text" class="form-control" [(ngModel)]="valorGet">
+            <button *ngIf="contrasenia" (click)="contrasenia=''">
+                Close
+            </button>
+            <button (click)="peticionGet();">Petición GET</button>
+        </div>
+    </div>
+
+    <app-hijo [parametro]="valor" (eventoMensaje)="eventoRecepcionDato($event)" (eventoOcultar)="eventoOcultarHijo($event)" *ngIf="mostrarHijo"></app-hijo>
+    <app-comunicacion></app-comunicacion>
+</div>
+
+<div class="mt-5">
+    <a href="">Regresar al menú</a>
+</div>

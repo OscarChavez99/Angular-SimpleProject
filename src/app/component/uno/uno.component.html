@@ -1,0 +1,11 @@
+<h1>This is a simple example of how a real-time variable updates from the input to the label</h1>
+
+<div class="inputs-container">
+    <input type="text" [(ngModel)] = "input_value">
+    <label>{{input_value}}</label>
+</div>
+
+<div class="buttons-container">
+    <button id="btnAlert" class="btn btn-primary" (click)="btnAlert_Click();">Alert</button>
+    <button class="btn btn-info" (click)="Clear()">Clear</button>
+</div>
