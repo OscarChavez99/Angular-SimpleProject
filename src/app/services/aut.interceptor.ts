@@ -20,7 +20,7 @@ export class AutInterceptor implements HttpInterceptor {
       body: request.body,
       setHeaders: {
         'Content-Type' : 'application/json',
-        'Authorization' : 'Bearer eyJhbGciOiJUuz'
+        'Authorization' : 'Bearer TOKEN_HERE'
       }
     });
     return next.handle(request);
