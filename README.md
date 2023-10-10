@@ -1,10 +1,9 @@
 # MiAplicacion
 
-This is a very simple project to learn how to communicate between components with a very simple menu <br>
+This is a very simple project to learn how to communicate between components with a very simple menu 
+was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
 ![Alt text](image.png)
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
 ## Development server
 
